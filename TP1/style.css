@@ -80,6 +80,10 @@ ul {
     .hero {
         min-height: 10em;
     }
+
+    .apropos {
+        flex-direction: column;
+    }
 }
 
 a,
