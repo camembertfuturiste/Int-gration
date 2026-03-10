@@ -1,0 +1,64 @@
+.lien1 {
+    display: flex;
+    justify-content: center;
+}
+
+/* gere la liste du début et celle du milieu */
+ul {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 4;
+    margin: 0;
+    color: #000000;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+main {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.7;
+    margin: 0;
+    color: #000000;
+    max-width: 60ch;
+}
+
+/* la parte suivante gère tout ce qui est des titres */
+h1 {
+    background-color: red;
+    color: white;
+    width: 98vw;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    border-radius: 60%;
+}
+
+h2 {
+    margin: 0;
+    background-color: green;
+    color: white;
+    width: 98vw;
+    display: flex;
+    justify-content: center;
+    border-radius: 60%;
+}
+
+h3 {
+    margin: 0;
+    background-color: blue;
+    color: white;
+    width: 98vw;
+    display: flex;
+    justify-content: center;
+    border-radius: 60%;
+}
+
+/* fin de la partie qui gère les titres */
+blockquote {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90vw;
+}
+
+/* 90vh pour que le wrap arrive avant que le texte touche le coté du display */
