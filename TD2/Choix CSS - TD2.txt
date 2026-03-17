@@ -1,0 +1,4 @@
+Choix CSS - TD2
+- J'ai appris comment bien organiser mon CSS en limitant le nombre de classe utilisée tout en faisant un code lisible et compréhensible par tous  
+
+Je n'ai pas utilisé d'IA. 

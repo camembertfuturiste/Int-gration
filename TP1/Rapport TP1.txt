@@ -1,0 +1,6 @@
+Rapport TP1 
+- J'ai pu apprendre les box shadow ainsi que le positionnement en gris 
+- ce tp m'a aussi aider à mieux organiser mon CSS 
+- J'ai aussi pu voir que placer les couleurs dans le root était bien plus simple
+
+Je n'ai pas utilisé l'IA
