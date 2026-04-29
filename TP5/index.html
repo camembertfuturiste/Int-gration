@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mon super site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="titre">Portfolio</div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="content">
+
+            <div class="intro">
+                <div class="intro-titre">Bienvenue sur mon portfolio</div>
+                <div class="intro-description">Étudiante en MMI, passionnée par le web.</div>
+            </div>
+
+            <div class="projets-section" id="projets">
+                <div class="section-titre">Mes projets</div>
+
+                <div class="filtres-container">
+                    <span class="filtre actif" onclick="filtrer('tous')">Tous</span>
+                    <span class="filtre" onclick="filtrer('HTML')">HTML</span>
+                    <span class="filtre" onclick="filtrer('CSS')">CSS</span>
+                    <span class="filtre" onclick="filtrer('JS')">JS</span>
+                </div>
+
+                <div class="grille-projets" id="grille">
+                    <!-- Rempli par JS -->
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+        <!-- Modale -->
+        <div class="modale-overlay" id="modale">
+            <div class="modale-contenu">
+                <span class="modale-fermer" onclick="fermerModale()">×</span>
+                <div id="modale-body"></div>
+            </div>
+    </main>
+    <footer>
+        <div>© 2026 — Mon portfolio</div>
+        </div>
+    </footer>
+    <script>
+        // ============================
+        // PROBLÈMES JS À TROUVER :
+        // - onclick inline (pas addEventListener)
+        // - getElementById au lieu de querySelector
+        // - element.style au lieu de classList
+        // - pas de gestion clavier (Escape, Tab)
+        // - pas d'attributs aria
+        // - données et affichage mélangés
+        // ============================
+
+        try {
+            const reponse = await fetch('./data.json');
+
+            if (!reponse.ok) {
+                throw new Error(`Erreur HTTP : ${reponse.status}`);
+            }
+
+            const donnees = await reponse.json();
+
+            // État : succès
+            afficherProjets(donnees.projets);
+        } catch (erreur) {
+            // État : erreur
+            conteneur.innerHTML = `<p class="error">Impossible de charger les données : ${erreur.message}</p>`;
+            console.error(erreur);
+        }
+
+        function afficherProjets(projets) {
+            conteneur.innerHTML = '';
+            projets.forEach((projet) => {
+                const carte = document.createElement('article');
+                carte.classList.add('carte');
+                carte.innerHTML = `
+      <h3>${projet.titre}</h3>
+      <p>${projet.description}</p>
+      <p class="annee">${projet.annee}</p>
+      <div class="tags">
+        ${projet.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+      </div>
+    `;
+                conteneur.append(carte);
+            });
+            chargerEtAfficher();
+        } function filtrer(tag) { // Gestion visuelle des filtres actifs var
+            filtres = document.querySelectorAll('.filtre'); for (var i = 0; i < filtres.length; i++) {
+                filtres[i].style.background = '#ddd'; filtres[i].style.color = '#333';
+            }
+            event.target.style.background = '#1a1a2e'; event.target.style.color = 'white'; if (tag === 'tous') {
+                afficherProjets(projets);
+            } else {
+                var filtres = projets.filter(function (p) {
+                    return p.tags.indexOf(tag)
+                        !== -1;
+                }); afficherProjets(filtres);
+            }
+        } function ouvrirModale(id) {
+            var projet = null; for (var i = 0; i <
+                projets.length; i++) { if (projets[i].id === id) { projet = projets[i]; break; } } if (!projet) return;
+            document.getElementById('modale-body').innerHTML = '<h2>' + projet.titre + '</h2>' + '<p>' +
+                projet.description + '</p>' + '<p>Tags : ' + projet.tags.join(', ') + ' </p>';
+
+            document.getElementById('modale').style.display = 'block';
+        }
+
+        function fermerModale() {
+            document.getElementById('modale').style.display = 'none';
+        }
+
+        afficherProjets(projets);
+    </script>
+
+</body>
+
+</html>

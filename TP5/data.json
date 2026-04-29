@@ -1,0 +1,58 @@
+{
+    "projets": [
+        {
+            "id": 1,
+            "titre": "Site vitrine",
+            "description": "Un site pour une boulangerie locale. Design responsive et moderne.",
+            "tags": [
+                "HTML",
+                "CSS"
+            ]
+        },
+        {
+            "id": 2,
+            "titre": "Quiz interactif",
+            "description": "Application de quiz avec score et timer.",
+            "tags": [
+                "JS",
+                "HTML"
+            ]
+        },
+        {
+            "id": 3,
+            "titre": "Portfolio v1",
+            "description": "Ma première version de portfolio.",
+            "tags": [
+                "HTML",
+                "CSS"
+            ]
+        },
+        {
+            "id": 4,
+            "titre": "Dashboard météo",
+            "description": "Tableau de bord météo avec API Open Meteo.",
+            "tags": [
+                "JS",
+                "CSS"
+            ]
+        },
+        {
+            "id": 5,
+            "titre": "Blog tech",
+            "description": "Blog statique sur le développement web.",
+            "tags": [
+                "HTML",
+                "CSS",
+                "JS"
+            ]
+        },
+        {
+            "id": 6,
+            "titre": "Jeu du pendu",
+            "description": "Jeu du pendu en JavaScript vanilla.",
+            "tags": [
+                "JS"
+            ]
+        }
+    ]
+}
